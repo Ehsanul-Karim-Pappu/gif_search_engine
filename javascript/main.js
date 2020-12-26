@@ -2,17 +2,26 @@ var giphy_apikey = "dc6zaTOxFJmzC";
 var tenor_apikey = "47UF06P156TA";
 
 
+/******* Username Input  *******/
+var username = ""
+username = prompt("What's your name?");
+
+while (username == "" || username == null) {
+	username = prompt("age nam de Bokachoda");
+}
 
 
-var username = prompt("What's your name?");
+/*******  Greetings  *******/
 var greetings = document.querySelector('.greetings');
 greetings.innerHTML = "";
 greetings.innerHTML = "<h1>Kire " + username + " khankir pola!!!!<h1/>";
 
+
+/******* Dynamic Placeholder  *******/
 document.querySelector('.js-userinput').setAttribute("placeholder", "Ei " + username + " madarchod, Search de!!!");
 
 
-
+/*******  Button Click Event  *******/
 document.querySelector(".js-go").addEventListener('click', function () {
 	var inputValue = document.querySelector('.js-userinput').value;
 	var userInput = getUserInput();
@@ -20,6 +29,7 @@ document.querySelector(".js-go").addEventListener('click', function () {
 	searchTenor(userInput);
 });
 
+/*******  Button Press Enter Event  *******/
 document.querySelector('.js-userinput').addEventListener('keyup', function (e) {
 	if (e.which === 13) {
 		var userInput = getUserInput();
@@ -28,9 +38,11 @@ document.querySelector('.js-userinput').addEventListener('keyup', function (e) {
 	}
 });
 
+
+
+/*******  Taking Input From the text input box  *******/
 function getUserInput() {
 	var inputValue = document.querySelector('.js-userinput').value;
-
 	return inputValue;
 }
 
