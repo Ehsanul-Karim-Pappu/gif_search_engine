@@ -23,7 +23,6 @@ document.querySelector('.js-userinput').setAttribute("placeholder", "Ei " + user
 
 /*******  Button Click Event  *******/
 document.querySelector(".js-go").addEventListener('click', function () {
-	var inputValue = document.querySelector('.js-userinput').value;
 	var userInput = getUserInput();
 	searchGiphy(userInput);
 	searchTenor(userInput);
@@ -64,7 +63,6 @@ function searchGiphy(searchQuery) {
 		var actualData = data.target.response;
 		pushToDOM_giphy(actualData);
 	});
-
 }
 
 function pushToDOM_giphy(response) {
